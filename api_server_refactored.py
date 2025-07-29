@@ -17,15 +17,7 @@ app = FastAPI(
 # Add CORS middleware for Flutter app
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:8080", 
-        "http://localhost:8000",
-        "https://your-flutter-app-domain.com",  # Replace with your actual domain
-        "https://*.railway.app",  # Allow all Railway subdomains
-        "capacitor://localhost",
-        "ionic://localhost"
-    ],
+    allow_origins=["*"],  # In production, specify your Flutter app's domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
