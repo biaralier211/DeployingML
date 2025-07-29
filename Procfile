@@ -1,1 +1,1 @@
-web: chmod +x start.sh && ./start.sh 
+web: uvicorn api_server_refactored:app --host 0.0.0.0 --port ${PORT:-8000} 

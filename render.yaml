@@ -1,7 +1,7 @@
 services:
   - type: web
-    name: kmart-ml-api
+    name: kmart-ml-api-v2
     env: python
     plan: free
     buildCommand: chmod +x build.sh && ./build.sh
-    startCommand: chmod +x start.sh && ./start.sh 
+    startCommand: uvicorn api_server_refactored:app --host 0.0.0.0 --port ${PORT:-8000} 
