@@ -54,6 +54,12 @@ git push origin main
 - **Build Command**: `pip install -r requirements.txt`
 - **Start Command**: `uvicorn api_server_refactored:app --host 0.0.0.0 --port $PORT`
 
+**Important**: The API has been optimized for Render's free tier by:
+- Removing heavy ML dependencies (torch, transformers)
+- Using lightweight alternatives (TF-IDF for search)
+- Including sample data for testing
+- Implementing fallback mechanisms
+
 ### 2.4 Advanced Settings (Optional)
 - **Auto-Deploy**: Enable to automatically deploy on code changes
 - **Health Check Path**: `/` (your root endpoint)
